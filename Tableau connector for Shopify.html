@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tableau connector for Shopify</title>
+        <meta http-equiv="Cache-Control" content="no-store" />
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href='/assets/stylesheets/main.css'>
+        <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+        <script >
+            const dataSourceId = '6e957a2d-06b3-47cf-90a7-4bd6eb49f4ac';
+            const connectorName = 'test';
+            const connectorData = '';
+        </script>
+
+        <script  src="https://connectors.tableau.com/libs/tableauwdc-2.3.latest.min.js" type="text/javascript"></script>
+        <script  src="/assets/javascripts/wdc/tableauWdc.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="no-tableau-alert" class="container" style="display: none;">
+            <div id="alert" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Not available" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Content is not available</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-danger" role="alert">
+                                Sorry, this link is not available for opening in the browser.<br>
+                                This page is designed to be used from within Tableau's Web Data Connector interface!
+                            </div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="login-section" style="display: none;">
+            <div class="jumbotron text-center">
+                <p>Web Data Connector for</p>
+                <h2><strong>test</strong></h2>
+                <h5></h5>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <div class="alert alert-info" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          Due to security reasons, in order to import the data successfully, you should use the credentials provided at the <strong>Settings tab</strong> of the Tableau connector app.
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <form id="login-form">
+                            <p class="text-center">Sign in</p>
+                            <div class="form-group">
+                                <input type="text" id="login" class="form-control" placeholder="Username" autocomplete="off" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="off" required="required">
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <button id="submit-login" class="btn btn-primary btn-block">Log in and Export</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
